@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('delivery_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('status_name', 100);
+            $table->string('status_name');
             $table->timestamps();
 
         

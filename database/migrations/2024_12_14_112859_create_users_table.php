@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // Laravel default primary key
-            $table->string('username', 100);
-            $table->string('password', 100);
+            $table->string('username');
+            $table->string('password');
             $table->text('address');
-            $table->string('number', 15);
+            $table->string('number');
             $table->timestamps();
         });
     }

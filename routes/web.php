@@ -1,34 +1,41 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home',[
+        "pagetitle" => "KATERINGKU"
+    ]);
 });
+use App\Http\Controllers\RestaurantController;
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/restaurants', [RestaurantController::class, 'showRestaurants']);
+
+Route::get('/profile', function () {
+    return view('profile',[
+        "pagetitle" => "profile"
+    ]);
 });
-
-Route::get('/restaurant', function () {
-    return view('restaurant');
-});
-
-Route::get('/fusion', function () {
-    return view('fusion');
-});
-
-Route::get('/orderstatus', function () {
-    return view('orderstatus');
-});
-
 Route::get('/signup', function () {
-    return view('signup');
+    return view('signup',[
+        "pagetitle" => "Login"
+    ]);
 });
-
-Route::get('/login', function () {
-    return view('login');
+Route::get('/signin', function () {
+    return view('signin',[
+        "pagetitle" => "Login"
+    ]);
 });
-
-//hlo bsng apa kbr 
-//omg omg omg
+Route::get('/fusions', function () {
+    return view('fusions',[
+        "pagetitle" => "Fusions"
+    ]);
+});
+Route::get('/orderstatus', function () {
+    return view('orderstatus',[
+        "pagetitle" => "Order Status"
+    ]);
+});

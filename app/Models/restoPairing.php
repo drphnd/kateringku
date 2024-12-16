@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class restoPairing extends Model
 {
@@ -17,5 +18,13 @@ class restoPairing extends Model
     public static function getAllRestoPairing()
     {
         return self::all();
+    }
+
+    // penghubung relation database
+    public function restos(): BelongsTo{
+        return $this->belongsTo(resto::class);
+    }
+    public function categories(): BelongsTo{
+        return $this->belongsTo(category::class);
     }
 }

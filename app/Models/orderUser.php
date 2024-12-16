@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class orderUser extends Model
 {
@@ -12,12 +14,22 @@ class orderUser extends Model
     protected $fillable = [
         'user_id',
         'totalPrice',
-        'DATE',
+        'date',
         'isPaymentStatus',
     ];
 
     public static function getAllOrderUser()
     {
         return self::all();
+    }
+
+
+    // penghubung relation database
+    public function users(): BelongsTo{
+        return $this->belongsTo(users::class);
+    }
+
+    public function orderDetails(): HasMany{
+        return $this->hasMany(orderDetail::class, 'order_user_id');
     }
 }

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('restos', function (Blueprint $table) {
             $table->id();
-            $table->string('resto_name', 100);
+            $table->string('resto_name');
             $table->text('address');
-            $table->string('number', 15);
+            $table->string('number');
             $table->timestamps();
         });
     }
