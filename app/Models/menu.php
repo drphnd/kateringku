@@ -11,7 +11,7 @@ class menu extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'menuName',
+        'menu_name',
         'description',
         'price',
         'image',
@@ -25,7 +25,7 @@ class menu extends Model
 
     // penghubung relation database
     public function restos(): BelongsTo{
-        return $this->belongsTo(resto::class);
+        return $this->belongsTo(resto::class, 'resto_id');
     }
     public function menuDates(): HasMany{
         return $this->hasMany(menuDate::class, 'menu_id');

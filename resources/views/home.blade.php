@@ -56,8 +56,14 @@
     }
 </style>
 <x-layout>
-    <x-slot name="layoutTitle">{{ $pagetitle }}</x-slot>
+  
+    <h1>Welcome to Home Page</h1>
+    <p>You have successfully logged in!</p>
 
+    {{-- <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit">Logout</button>
+    </form> --}}
     <div class="carousel relative container mx-auto" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
             <!--Slide 1-->

@@ -12,17 +12,20 @@ class resto extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'restoName',
+        'resto_name',
         'address',
         'number',
     ];
 
+    
+
     public static function getAllResto()
     {
-        return self::all();
+        return resto::all();
     }
 
     // penghubung relation database
+
     public function menus(): HasMany{
         return $this->hasMany(menu::class, 'resto_id');
     }

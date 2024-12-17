@@ -13,9 +13,9 @@ class orderUser extends Model
 
     protected $fillable = [
         'user_id',
-        'totalPrice',
+        'total_price',
         'date',
-        'isPaymentStatus',
+        'is_payment_status',
     ];
 
     public static function getAllOrderUser()
@@ -26,7 +26,7 @@ class orderUser extends Model
 
     // penghubung relation database
     public function users(): BelongsTo{
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function orderDetails(): HasMany{

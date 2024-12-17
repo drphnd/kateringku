@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,9 +10,12 @@ Route::get('/', function () {
         "pagetitle" => "KATERINGKU"
     ]);
 });
-use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\restaurantController;
 
-Route::get('/restaurants', [RestaurantController::class, 'showRestaurants']);
+
+Route::get('/restaurants', [restaurantController::class,'showRestaurants'])->name('restaurant');
+
+Route::get('/restaurants/{id}', [RestaurantController::class, 'find'])->name('restaurants.show');
 
 Route::get('/profile', function () {
     return view('profile',[
@@ -39,3 +42,17 @@ Route::get('/orderstatus', function () {
         "pagetitle" => "Order Status"
     ]);
 });
+
+
+
+
+
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/home', function () {
+    return view('home'); // Mengarah ke resources/views/home.blade.php
+})->name('home')->middleware('auth'); // Hanya bisa diakses jika user sudah login

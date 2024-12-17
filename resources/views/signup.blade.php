@@ -1,4 +1,4 @@
-{{-- <x-layout>
+<x-layout>
   <x-slot:layoutTitle>{{ $pagetitle }}</x-slot:layoutTitle>
   <section class="bg-white">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -44,4 +44,4 @@
           </div>
       </div>
   </section>
-</x-layout> --}}
+</x-layout>

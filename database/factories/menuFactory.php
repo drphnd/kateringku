@@ -157,7 +157,7 @@ class menuFactory extends Factory
             'resto_id'=> resto::factory(), 
             'menu_name' => implode(',', $this->faker->randomElements($menuName, $this->faker->numberBetween(1, 3))),
             'description' => implode(',', $description), // Pastikan deskripsi sesuai dengan menu yang dipilih
-            'price' => $this->faker->numberBetween(60000, 300000),
+            'price' => $this->faker->number_format(60000, 300000),
             'image' => $this->faker->imageUrl(),
         ];
     }

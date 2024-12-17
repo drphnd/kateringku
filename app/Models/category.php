@@ -10,7 +10,7 @@ class category extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'categoryName'
+        'category_name'
     ];
 
     public static function getAllCategory()
