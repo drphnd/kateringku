@@ -58,11 +58,8 @@
 
 <x-layout>
     {{-- <x-slot:layoutTitle>{{ $pagetitle}}</x-slot:layoutTitle> --}}
-    <div class="text-gray-800 text-lg font-bold text-left ml-24 my-4">
-        <label for="current-date" class="block mb-2">Pilih Tanggal:</label>
-        <input type="date" id="current-date" name="current-date" class="border border-gray-400 rounded p-2"
-            min="{{ now()->format('Y-m-d') }}" />
-    </div>
+    
+    
     <x-menu :menus="$menus"></x-menu>
     <x-footer />
 

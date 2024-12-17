@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -46,6 +48,8 @@ Route::get('/orderstatus', function () {
 
 
 
+Route::get('signup', [RegisterController::class, 'create'])->name('signup');
+Route::post('register', [RegisterController::class, 'store'])->name('register');
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
@@ -56,3 +60,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/home', function () {
     return view('home'); // Mengarah ke resources/views/home.blade.php
 })->name('home')->middleware('auth'); // Hanya bisa diakses jika user sudah login
+
+
+
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');

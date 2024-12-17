@@ -57,9 +57,6 @@
 </style>
 <x-layout>
   
-    <h1>Welcome to Home Page</h1>
-    <p>You have successfully logged in!</p>
-
     {{-- <form action="{{ route('logout') }}" method="POST">
         @csrf
         <button type="submit">Logout</button>
